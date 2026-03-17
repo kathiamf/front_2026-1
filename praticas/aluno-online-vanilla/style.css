@@ -39,7 +39,6 @@ header img{
     width:45px;
     height:45px;
     border-radius:50%;
-    background:var(--cor-fundo);
     padding:5px;
 }
 
@@ -62,6 +61,15 @@ section{
     box-shadow:0 2px 6px var(--cor-fundo);
     overflow:hidden;
     border: 1px solid #d9d9d9;;
+}
+
+section h2{
+background:transparent;
+padding:0;
+font-size:20px;
+margin-bottom:10px;
+border:none;
+box-shadow:none;
 }
 
 section h3{
@@ -92,6 +100,16 @@ display:block;
 width:240px;
 background:#dcdcdc;
 min-height:100vh;
+}
+aside header{
+   display:flex;
+   align-items:center;
+   gap:10px;
+   background: #dcdcdc;
+}
+
+aside img{
+margin-right:10px;
 }
 
 aside ul{
