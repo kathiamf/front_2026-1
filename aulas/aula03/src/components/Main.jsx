@@ -1,12 +1,16 @@
 import Card from "./Card";
 import Topbar from "./Topbar";
+import Tabelas from "./Tabela";
 
-function Main(){
+function Main(props){
     return (
         <main className="flex flex-colmax-w-screen">
-            <Topbar/>
-            <h2>Bem-vindo ao portal do aluno</h2>
-            <Card/>
+            <Topbar titulo={props.titulo}/>
+            <h2>{props.subtitulo}</h2>
+            <section>
+                {props.children}
+            </section>
+            
         </main>
     );
 }

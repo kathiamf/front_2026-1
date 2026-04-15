@@ -1,20 +1,16 @@
 import Sibebar from "../components/Sidebar";
+import Tabela from "../components/Tabela";
 import Topbar from "../components/Topbar";
 
-function Boletos() {
+function Boletos(props) {
 
     return(
-        <>
-
-        <Sibebar/>
-
-        <main>
-            <Topbar/>
-            <h2>Meus Boletos</h2>
-            <section></section>
-        </main>
-        
-        </>
+     <>
+         <Sibebar navegaPara={props.navegaPara}/>
+        <Main titulo="Meus Boletos" subtitulo="Histórico de Pagemanto">
+           <Tabela colunas={[]} dados={[]}/>
+        </Main>
+    </>
     );
 }
 export default Boletos;
