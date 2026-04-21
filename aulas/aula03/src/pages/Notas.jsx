@@ -1,14 +1,17 @@
+import Main from "../components/Main";
 import Sibebar from "../components/Sidebar";
 import Topbar from "../components/Topbar";
 
-function Notas(){
+
+function Notas(props){
     return(
         <>
-            <Sibebar/>
-            <main>
-                <Topbar/>
-                <h2>Minhas Notas</h2>
-            </main>
+             <Sibebar navegaPara={props.navegaPara}/>
+            <Main titulo="Minhas Notas" subtitulo="Historico por Semestre">
+                    <Tabela titulo="2026.1" colunas={[]} dados={[]}/>
+                    <Tabela titulo="2025.2" colunas={[]} dados={[]}/>
+                    <Tabela titulo="2025.1" colunas={[]} dados={[]}/>
+            </Main>
         </>
     );
 }

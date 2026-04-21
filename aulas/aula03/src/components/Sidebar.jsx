@@ -1,7 +1,7 @@
-import logo from "../assets/learn-svgrepo-com.svg";
+import logo from "../assets/learn.svg";
 import Menu from "./Menu";
 
-function Sibebar(){
+function Sibebar(props){
 
     return( 
     <aside className="hidden md:block bg-gray-300">
@@ -9,7 +9,7 @@ function Sibebar(){
             <img src={logo} alt="imagem logo"/>
             <h1>Aluno Online</h1>
             </header>
-            <Menu/>
+            <Menu navegaPara={props.navegaPara}/>
     </aside>
     );
 }
