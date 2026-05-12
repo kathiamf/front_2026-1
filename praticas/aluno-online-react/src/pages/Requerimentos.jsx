@@ -21,7 +21,7 @@ function Requerimentos() {
 
   return (
     <>
-      <Sidebar />
+      
       <Main
         titulo="Meus Requerimentos"
         subtitulo="Faça solitações online para Scretária"

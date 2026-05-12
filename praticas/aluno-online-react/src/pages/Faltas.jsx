@@ -27,7 +27,7 @@ function Notas() {
   ];
   return (
     <>
-      <Sidebar />
+      
       <Main titulo="Minhas Faltas" subtitulo="Histórico de Faltas">
         <Tabela
           titulo="1° Semestre - 2026"

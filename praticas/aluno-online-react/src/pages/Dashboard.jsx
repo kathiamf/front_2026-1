@@ -23,7 +23,7 @@ function Dashboard() {
 
   return (
     <>
-      <Sidebar />
+      
       <Main titulo="Olá, Aluno!" subtitulo="Bem - vindo ao Portal do Aluno">
           <Card titulo="Mural de Avisos" itens={avisos} />
           <Card titulo="Calendário Acdêmico" itens={datas} />

@@ -1,17 +1,33 @@
-import Requerimentos from "./pages/Requerimentos";
-import Boletos from "./pages/Boletos";
-import Dashboard from "./pages/Dashboard";
-import Faltas from "./pages/Faltas";
-import Notas from "./pages/Notas";
+import { Routes, Route } from "react-router";
+import About from "./pages/About";
+import Perfil from "./pages/Perfil";
+import Settings from "./pages/Settings";
+import Home from "./pages/Home";
+import Erro404 from "./pages/Erro404";
+import Layout from "./layout/Layout";
+import Login from "./pages/Login";
 
+function App() {
+  const logado = true;
 
+  return (
+    <Routes>
+      {logado ? (
+      <Route path ="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="about" element={<About />} />
+        <Route path="perfil/:id" element={<Perfil />} />
+        <Route path="settings" element={<Settings />} />
+        <Route path="*" element={<Erro404 />} />
+      </Route>
+      ):(
 
-function App(){
-  return ( 
-    <>
-    <Requerimentos />
-    </>
-  )
+      <Route path="/login" element={<Login />} />
+      )}
+      <Route path="*" element={<Erro404/>}/>
+      
+    </Routes>
+  );
 }
 
 export default App;
