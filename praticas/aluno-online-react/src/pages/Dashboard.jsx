@@ -23,12 +23,14 @@ function Dashboard() {
 
   return (
     <>
-      
+    
       <Main titulo="Olá, Aluno!" subtitulo="Bem - vindo ao Portal do Aluno">
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-4 md:p-8">
           <Card titulo="Mural de Avisos" itens={avisos} />
           <Card titulo="Calendário Acdêmico" itens={datas} />
           <Card titulo="Minhas Disciplinas" itens={disciplinas} />
           <Card titulo="Minhas Disciplinas" itens={disciplinas} />
+          </section>
       </Main>
     </>
   );

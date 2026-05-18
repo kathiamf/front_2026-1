@@ -1,15 +1,15 @@
-import { Outlet } from "react-router-dom"
+import { Outlet } from "react-router";
 import Menu from "../components/Menu"
+import Sidebar from "../components/Sidebar";
 
-function Layout() {
-  return (
-    <div className="app-container">
-      <Menu />
-      <main className="main-content">
-        <Outlet />
-      </main>
-    </div>
-  )
+function Layout () {
+    return (
+        <>
+        <Sidebar/>
+        
+            <Outlet />
+        </>
+    )
 }
 
-export default Layout
+export default Layout;

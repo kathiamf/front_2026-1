@@ -29,7 +29,6 @@ function Boletos() {
 
   return (
     <>
-      
       <Main
         titulo="Meus Boletos"
         subtitulo="Histórico de Pagamentos"
