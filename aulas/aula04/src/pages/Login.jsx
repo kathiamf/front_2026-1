@@ -2,12 +2,12 @@ import { useNavigate } from "react-router";
 import { useAuth} from "../contexts/AuthContext"
 
 function Login () {
-    const {Login} = useAuth();
+    const {login} = useAuth();
 
 const navigate = useNavigate();
 
 const handleEntra = () => {
-    Login({usename: "kathia@iesb.br", password: "123456"})
+    login({username: "kathia@iesb.br", password: "123456"})
     navigate("/");
 }
 

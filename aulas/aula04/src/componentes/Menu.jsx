@@ -1,12 +1,11 @@
 import './Menu.css'
-import { useContext } from 'react';
 import {NavLink, useNavigate} from 'react-router'
 import{ useAuth} from '../contexts/AuthContext';
 
 function Menu() {
   const usuarioID = 0;
 
-  const {logout, usuario} = useContext(useAuth);
+  const {logout, usuario} = useAuth();
 
   const navigate = useNavigate();
   

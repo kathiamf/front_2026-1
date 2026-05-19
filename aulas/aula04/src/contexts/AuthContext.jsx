@@ -6,7 +6,7 @@ const AuthContext = createContext();
 
 function AuthProvider({children}) {
 const [usuario, setUsuario] = useState({});
-const [logado, setLogado] = useState(false)
+const [logado, setLogado] = useState(true)
 
 const login = (dados) => {
     //cham a API backend

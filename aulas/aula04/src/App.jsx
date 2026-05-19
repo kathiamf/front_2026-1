@@ -1,4 +1,3 @@
-import { useContext } from "react";
 import { Routes, Route } from "react-router";
 import About from "./pages/About";
 import Perfil from "./pages/Perfil";
@@ -10,7 +9,7 @@ import Login from "./pages/Login";
 import {useAuth} from "./contexts/AuthContext";
 
 function App() {
-  const {logado} = useContext(useAuth);
+  const {logado} = useAuth();
 
   return (
     <Routes>
