@@ -1,0 +1,59 @@
+{
+  "produtos": [
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "yBhggGba9tY"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "DFUaF-Greyk"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "1Bo-Mx0tgD4"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "Cn143bhjf24"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "pPPOWmpyRXM"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "SNLn2Ye1F70"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "i1OCJ4Pnvj8"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "E9BKhPrMjj4"
+    },
+    {
+      "nome": "banana",
+      "preco": 10.99,
+      "unidade": "kg",
+      "id": "UfdKs5_rtiA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
