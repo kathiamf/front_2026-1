@@ -53,6 +53,12 @@
       "preco": 10.99,
       "unidade": "kg",
       "id": "UfdKs5_rtiA"
+    },
+    {
+      "nome": "morango",
+      "preço": "10",
+      "unidade": "300g",
+      "id": "2x5Jm3ozsUA"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
