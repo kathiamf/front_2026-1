@@ -14,5 +14,15 @@
       "unidade": "300g"
     }
   ],
+  "fornecedores": [],
+  "pedidos": [],
+  "usuarios": [
+{
+    "id": 1,
+    "email": "kathiamfaria@gmail.com",
+    "senha": 123456
+}
+  ],
+
   "$schema": "./node_modules/json-server/schema.json"
 }
