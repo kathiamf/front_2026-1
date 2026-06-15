@@ -1,5 +1,4 @@
 import { Routes, Route } from "react-router";
-import { Routes, Route } from "react-router";
 import Dashboard from "./pages/Dashboard";
 import Faltas from "./pages/Faltas";
 import Notas from "./pages/Notas";
