@@ -1,4 +1,4 @@
-import { Routes, Route } from "react-router";
+import { Routes, Route, Navigate } from "react-router";
 import Dashboard from "./pages/Dashboard";
 import Faltas from "./pages/Faltas";
 import Notas from "./pages/Notas";
@@ -7,22 +7,34 @@ import Requerimentos from "./pages/Requerimentos";
 import Login from "./pages/Login";
 import Layout from "./layout/Layout";
 import Erro404 from "./pages/Erro404";
+import useAuth from "./hooks/useAuth";
+import RequerimentoForm from "./forms/RequerimentoForm";
 
-function App () {
+function App() {
+  const { logado } = useAuth();
+
   return (
     <Routes>
-     <Route path="/" element={<Layout />}>
-        <Route index element={<Dashboard />}/>
-        <Route path="notas" element={<Notas />}/>
-        <Route path="faltas" element={<Faltas />}/>
-        <Route path="boletos" element={<Boletos />}/>
-        <Route path="requerimentos" element={<Requerimentos />}/>
-     </Route>
-        
-    <Route path="*" element={<Erro404 />}/>
-    <Route path="/login" element={<Login />} />
+      {logado ? (
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Dashboard />} />
+          <Route path="notas" element={<Notas />} />
+          <Route path="faltas" element={<Faltas />} />
+          <Route path="boletos" element={<Boletos />} />
+          <Route path="requerimentos" element={<Requerimentos />}>
+            <Route path="novo" element={<RequerimentoForm />} />
+          </Route>
+        </Route>
+      ) : (
+        <>
+          <Route path="/login" element={<Login />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </>
+      )}
+      <Route path="*" element={<Erro404 />} />
     </Routes>
   ) 
 }
+
 
 export default App;
