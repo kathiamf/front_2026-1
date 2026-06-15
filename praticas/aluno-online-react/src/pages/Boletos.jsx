@@ -29,7 +29,6 @@ function Boletos() {
 
   return (
     <>
-      <Sidebar />
       <Main
         titulo="Meus Boletos"
         subtitulo="Histórico de Pagamentos"

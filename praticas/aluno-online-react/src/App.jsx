@@ -5,8 +5,8 @@ import Notas from "./pages/Notas";
 import Boletos from "./pages/Boletos";
 import Requerimentos from "./pages/Requerimentos";
 import Login from "./pages/Login";
-import Erro404 from "./pages/Erro404";
 import Layout from "./layout/Layout";
+import Erro404 from "./pages/Erro404";
 import useAuth from "./hooks/useAuth";
 import RequerimentoForm from "./forms/RequerimentoForm";
 
@@ -33,7 +33,8 @@ function App() {
       )}
       <Route path="*" element={<Erro404 />} />
     </Routes>
-  );
+  ) 
 }
+
 
 export default App;
