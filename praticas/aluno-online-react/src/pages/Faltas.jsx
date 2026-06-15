@@ -3,10 +3,10 @@ import Sidebar from "../components/Sidebar";
 import Tabela from "../components/Tabela";
 import Topbar from "../components/Topbar";
 
-function Notas() {
+function Faltas() {
   const colunas = ["Disciplinas", "Total de Faltas", "% de Presença"];
 
-  const notas = [
+  const faltas = [
     [
       ["BI e DataWarehouse", "0", "100%"],
       ["Construção de Frontend", "0", "100%"],
@@ -27,26 +27,25 @@ function Notas() {
   ];
   return (
     <>
-      <Sidebar />
       <Main titulo="Minhas Faltas" subtitulo="Histórico de Faltas">
         <Tabela
           titulo="1° Semestre - 2026"
           colunas={colunas}
-          dados={notas[0]}
+          dados={faltas[0]}
         />
         <Tabela
           titulo="2° Semestre - 2025"
           colunas={colunas}
-          dados={notas[1]}
+          dados={faltas[1]}
         />
         <Tabela
           titulo="1° Semestre - 2025"
           colunas={colunas}
-          dados={notas[2]}
+          dados={faltas[2]}
         />
       </Main>
     </>
   );
 }
 
-export default Notas;
+export default Faltas;
