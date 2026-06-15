@@ -1,6 +1,14 @@
 import {Link, NavLink} from 'react-router'
 
 function Menu() {
+  const { logout } = useAuth();
+  const navigate = useNavigate();
+
+  const handleSair = () => {
+    logout();
+    navigate("/login");
+  };
+
   return (
     <>
       <nav className="max-h-screen bg-gray-300 border-r border-gray-200 p-8">
