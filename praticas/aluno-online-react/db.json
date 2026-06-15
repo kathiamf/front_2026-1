@@ -1,0 +1,12 @@
+function Requerimentos() {
+  return (
+    <>
+      <Sidebar />
+      <Main>
+        <Tabela />
+      </Main>
+    </>
+  );
+}
+
+export default Requerimentos;
