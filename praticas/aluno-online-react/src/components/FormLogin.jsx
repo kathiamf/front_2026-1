@@ -1,58 +1,66 @@
 import { useState } from "react";
+import { useNavigate } from "react-router";
+import { useForm } from "react-hook-form";
 import InputMatricula from "./InputMatricula";
 import InputSenha from "./InputSenha";
 import InputSubmit from "./InputSubmit";
+import useAuth from "../hooks/useAuth";
 
-function FormLogin({navegaPara}) {
-  const [matricula, setMatricula] = useState();
-  const [senha, setSenha] = useState();
+
+function FormLogin() {
+  const { login } = useAuth();
+  const navigate = useNavigate();
+  const { register, handleSubmit } = useForm();
 
   const [matriculaErro, setMatriculaErro] = useState();
   const [senhaErro, setSenhaErro] = useState();
+  const [erro, setErro] = useState();
 
-  const handleSubmit = (e) => { e.preventDefault();
-
-    let Validacao = true;
+  const entrar = async (dados) => {
+    let validacao = true;
 
     setMatriculaErro("");
     setSenhaErro("");
 
-    if (!matricula) {
-      setMatriculaErro("Matrícula é Obrigatória");
-      Validacao = false;
+    if (!dados.matricula) {
+      setMatriculaErro("Matrícula é obrigatória");
+      validacao = false;
     }
 
-    if (!senha) {
+    if (!dados.senha) {
       setSenhaErro("Senha é obrigatória");
-      Validacao = false;
-    } else if (senha.length < 6) {
+      validacao = false;
+    } else if (dados.senha.length < 6) {
       setSenhaErro("A senha deve ter no mínimo 6 caracteres");
-      Validacao = false;
+      validacao = false;
     }
 
-    if(Validacao){
-    navegaPara(1);
+    if (validacao) {
+      try {
+        await login(dados);
+        navigate("/");
+        setErro("");
+      } catch (error) {
+        setErro(error.message);
+      }
     }
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit} className="flex flex-col md:w-100">
-
-        <InputMatricula
-          matricula={matricula}
-          erro={matriculaErro}
-          mudaValor={(e) => setMatricula(e.target.value)}
-        />
-
-        <InputSenha
-          senha={senha}
-          erro={senhaErro}
-          mudaValor={(e) => setSenha(e.target.value)}
-        />
-
-        <InputSubmit texto="Entrar"/>
-      </form>
+    <p>{erro}</p>
+    <form onSubmit={handleSubmit(entrar)} className="flex flex-col md:w-100">
+      <InputMatricula
+        erro={matriculaErro}
+        {...register("matricula")}
+      />
+      <InputSenha
+        erro={senhaErro}
+        {...register("senha")}
+      />
+      {erro && <p className="text-red-500 text-sm mt-1">{erro}</p>}
+      <InputSubmit texto="Entrar" />
+    </form>
     </>
   );
 }
